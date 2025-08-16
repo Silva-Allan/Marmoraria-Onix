@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fluxo de Caixa</title>
+
+  <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link rel="stylesheet" href="fluxo.css">
+</head>
+<body>
+    <main></main>
+    <header class="header">
+        <a href="inicioADMs.html" class="logo">
+            <img src="img/onix-dourado .png" alt="Logo da empresa" class="logo-img">
+        </a>
+        <h1>Fluxo de Caixa</h1>
+    </header>
+        <div class="tabela">
+            <div class="resume">
+                <div>
+                    Entradas: R$
+                    <span class="incomes">0.00</span>
+                </div>
+                <div>
+                    Saídas: R$
+                    <span class="expenses">0.00</span>
+                </div>
+                <div>
+                    Total: R$
+                    <span class="total">0.00</span>
+                </div>
+            </div>
+            <div class="newItem">
+                <div class="divDesc">
+                    <label for="desc">Descrição</label>
+                    <input type="text" id="desc" />
+                </div>
+                <div class="divAmount">
+                    <label for="amount">Valor</label>
+                    <input type="number" id="amount" />
+                </div>
+                <div class="divDate">
+                    <label for="itemDate">Data:</label>
+                    <input type="date" id="itemDate" required />
+
+                </div>
+                <div class="divType">
+                    <label for="type">Tipo</label>
+                    <select id="type">
+                        <option>Entrada</option>
+                        <option>Saída</option>
+                    </select>
+                </div>
+                <button id="btnNew">Incluir</button>
+            </div>
+            <div class="filters">
+                <label for="startDate">Data Início:</label>
+                <input type="date" id="startDate" />
+                <label for="endDate">Data Fim:</label>
+                <input type="date" id="endDate" />
+                <button id="btnFilter">Filtrar</button>
+            </div>
+            <div>
+                <label for="monthSelect">Selecione o mês:</label>
+                <select id="monthSelect" onchange="changeMonth()"></select>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Descrição</th>
+                        <th class="columnAmount">Valor</th>
+                        <th class="columnType">Tipo</th>
+                        <th class="columnDate">Data de Inclusão</th>
+                        <th class="columnAction">Ações</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Dados serão inseridos aqui -->
+                </tbody>
+            </table>
+            <div id="editCard" class="hidden">
+                <form id="editForm">
+                  <label for="editDesc">Descrição:</label>
+                  <input type="text" id="editDesc" required />
+              
+                  <label for="editAmount">Valor:</label>
+                  <input type="number" id="editAmount" step="0.01" required />
+              
+                  <label for="editType">Tipo:</label>
+                  <select id="editType">
+                    <option value="Entrada">Entrada</option>
+                    <option value="Saída">Saída</option>
+                  </select>
+              
+                  <label for="editDate">Data:</label>
+                  <input type="date" id="editDate" required />
+              
+                  <button type="submit">Salvar</button>
+                  <button type="button" onclick="closeEditCard()">Cancelar</button>
+                </form>
+              </div>              
+        </div>
+        <div class="saldo">
+            <div class="globalSummary">
+                <h1>Saldo atual</h1>
+                <div class="companyBalance">
+                    <div class="globalTotal">0.00</div>
+                </div>
+            </div>
+        </div>
+        <div class="grafico">
+            <div class="chart-container">
+                <canvas id="summaryChart" width="600" height="400"></canvas>
+            </div>
+        </div>
+    </main>
+
+  <script src="fluxo.js"></script>
+</body>
+</html>

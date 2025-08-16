@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ônix Mármores - Peças de Mármore Sob Medida</title>
+    <link rel="stylesheet" href="inicioADMs.css">
+</head>
+<body>
+    <!-- Cabeçalho -->
+    <header>
+        <div class="esquerda">
+            <div class="logo">
+                <a href="index.html"><img src="img/onix-dourado_e_preto-removebg-preview.png" class="logo" alt="Logo Ônix"></a>
+            </div>
+            <div>
+                <h1>Ônix Mármores</h1>
+            </div>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="cadCliente.html">Clientes</a></li>
+                <li><a href="cadFuncionário.html">Funcionários</a></li>
+                <li><a href="cadProdutos.html">Produtos</a></li>
+                <li><a href="cadVeiculos.html">Veículos</a></li>
+                <li><a href="fluxo.html" target="_blank">Caixa</a></li>
+
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Seção de Área Administrativa -->
+    <div class="welcome-section">
+        <img src="img/area administrativa.png" alt="área administrativa" class="Bem-vindos">
+    </div>   
+    <div class="titulo">
+        <h1>Notícias da empresa</h1>
+    </div>
+    <section class="noticias">
+        <div class="titulo">
+        </div>
+        <div class="container" id="noticias-container">
+            <!-- As notícias existentes serão geradas dinamicamente aqui -->
+        </div>
+        <div class="botoesNot">
+            <button class="btnNot" onclick="adicionarNoticia()">Adicionar Notícia</button>
+        </div>
+    </section>
+    
+    <!-- Modal para Adicionar/Editar Notícia -->
+    <div id="modal" class="modal hidden">
+        <div class="modal-content">
+            <h2 id="modal-title">Adicionar Notícia</h2>
+            <form id="noticia-form">
+                <label for="titulo">Título:</label>
+                <input type="text" id="titulo" name="titulo" required>
+    
+                <label for="conteudo">Conteúdo:</label>
+                <textarea id="conteudo" name="conteudo" rows="4" required></textarea>
+    
+                <button type="submit" class="btnNot">Salvar</button>
+                <button type="button" class="btnNot" onclick="fecharModal()">Cancelar</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Botão de rolagem -->
+    <button onclick="scrollToTop()" id="scrollBtn" title="Voltar ao topo">↑</button>
+
+    <footer class="footer">
+        <p>&copy; 2024 Ônix Mármores. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="inicioADMs.js"></script>
+</body>
+</html>
+

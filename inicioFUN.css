@@ -1,0 +1,223 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: #333;
+}
+
+/* Estilos do Cabeçalho */
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #333;
+    color: #fff;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+header.hidden {
+    top: -100px;
+    transition: top 0.3s;
+}
+
+.esquerda {
+    background-color: #333;
+    color: #fff;
+    padding: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo {
+    width: 60px;
+
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+nav a {
+    font-size: 23px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+nav a:hover {
+    color: #ecb140;
+}
+
+/* Noticias */
+.titulo {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    font-size: 30px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.container {
+    display: flex;
+    margin: 40px;
+    gap: 20px;
+}
+
+
+/* Estilos das Seções */
+.welcome-section img {
+    width: 100%;
+    margin-top: 103px;
+    display: flex;
+    height: auto;
+}
+
+.text-descricao {
+    display: flex;
+    height: 60px;
+    justify-content: center;
+    margin-top: auto;
+}
+
+.text-portfolio {
+    display: flex;
+    height: 100px;
+    justify-content: center;
+    font-size: 50px;
+}
+
+.content-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 50px;
+    gap: 30px;
+}
+
+.about-section,
+.portfolio-section,
+.history-section {
+    flex: 1;
+    padding: 20px;
+}
+
+.address-section {
+    flex: 1;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 10px;
+    margin-left: 0;
+}
+
+.portfolio-gallery {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; /* Permite que os itens fiquem em várias linhas */
+    gap: 50px; /* Espaçamento entre os itens */
+    padding: 20px; /* Margem interna */
+}
+
+.peca {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 400px;
+    background-color: #f9f9f9;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.peca img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.peca h4 {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+}
+
+
+.Marmoreiros {
+    width: 500px;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 50px;
+}
+
+/* Estilos do Rodapé */
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    margin-top: 20px;
+}
+
+/* Botão de rolagem */
+#scrollBtn {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 99;
+    font-size: 18px;
+    background-color: #333;
+    color: white;
+    border: none;
+    outline: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#scrollBtn:hover {
+    background-color: #555;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+    .content-row {
+        flex-direction: column;
+    }
+
+    .portfolio-gallery {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .portfolio-gallery img {
+        width: calc(50% - 10px);
+    }
+}
